@@ -5,6 +5,8 @@ import content
 from email.message import EmailMessage
 import imghdr
 import os 
+from jinja2 import Template
+
 
 EMAIL_ADDRESS = config.EMAIL_ADDRESS
 EMAIL_PASSWORD = config.EMAIL_PASSWORD

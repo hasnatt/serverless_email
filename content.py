@@ -10,3 +10,6 @@ HTML_CONTENT = f"""\
 </body>
 </html>
 """
+
+# look at
+# https://techmonger.github.io/69/jinja2-render-html/
