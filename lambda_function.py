@@ -1,19 +1,23 @@
 import json
 import smtplib
 import config
+import content
 from email.message import EmailMessage
 import imghdr
 import os 
 
 EMAIL_ADDRESS = config.EMAIL_ADDRESS
 EMAIL_PASSWORD = config.EMAIL_PASSWORD
+HTML_CONTENT = content.HTML_CONTENT
 
 
 msg = EmailMessage()
 msg['Subject'] = 'Images'
 msg['From'] = EMAIL_ADDRESS
 msg['To'] = 'hsntbdl@gmail.com'
-msg.set_content('fkgndfkgn knjfdkgfd')
+# msg.set_content('Plain text email')
+
+msg.set_content(HTML_CONTENT, subtype = 'html')
 
 
 attatchment_files = os.listdir('attatchments/')
@@ -26,7 +30,7 @@ for filename in attatchment_files:
         print(file_type)
         file_name =os.path.basename(f.name)
 
-    msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)    
+    msg.add_attachment(file_data, maintype='application', subtype='octet-stream', filename=file_name)    
 
 with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
     smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
