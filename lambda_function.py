@@ -3,6 +3,7 @@ import smtplib
 import config
 from email.message import EmailMessage
 import imghdr
+import os 
 
 EMAIL_ADDRESS = config.EMAIL_ADDRESS
 EMAIL_PASSWORD = config.EMAIL_PASSWORD
@@ -14,16 +15,22 @@ msg['From'] = EMAIL_ADDRESS
 msg['To'] = 'hsntbdl@gmail.com'
 msg.set_content('fkgndfkgn knjfdkgfd')
 
-with open('clouds.gif', 'rb') as f:
-    file_data = f.read()
-    file_type = imghdr.what(f.name)
-    file_name = f.name
+attatchment_files = list()
+for root, dirs, files in os.walk("attatchments/"):
+    for filename in files:
+        attatchment_files.append(filename)
 
-msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)    
+print(attatchment_files)
+# with open('attatchments/clouds.gif', 'rb') as f:
+#     file_data = f.read()
+#     file_type = imghdr.what(f.name)
+#     file_name = f.name
 
-with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-    smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-    smtp.send_message(msg)
+# msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)    
+
+# with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+#     smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+#     smtp.send_message(msg)
 
 
 
