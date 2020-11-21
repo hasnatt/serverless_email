@@ -7,7 +7,7 @@ import imghdr
 import os 
 from jinja2 import Template
 
-
+# macros
 EMAIL_ADDRESS = config.EMAIL_ADDRESS
 EMAIL_PASSWORD = config.EMAIL_PASSWORD
 EMAIL_TO = config.EMAIL_TO
