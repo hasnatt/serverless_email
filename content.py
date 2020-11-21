@@ -6,18 +6,16 @@ def export_html(html_string):
         fh.write(html_string)
 
 def get_html():
-
+    # put data into dictionary
     today = date.today()
     d = today.strftime("%d/%m/%Y")
-
-    # put data into dictinary
     name = 'hasnat'
     body = {
         'name': name,
         'date': d
     }
 
-    # open file env and render emplate with dictionary
+    # open file env and render template with dictionary
     env = Environment(loader=FileSystemLoader(''))
     template = env.get_template('template.html')
     HTML_CONTENT = template.render(body=body)

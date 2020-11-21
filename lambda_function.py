@@ -23,14 +23,14 @@ def lambda_handler(event, context):
     msg.set_content(HTML_CONTENT, subtype = 'html')
 
     # add attatchments
-    attatchment_files = os.listdir('attatchments/')
+    attatchment_files = os.listdir('attachments/')
     for filename in attatchment_files:
-        file = os.path.join('attatchments/', filename)
+        file = os.path.join('attachments/', filename)
         with open(file, 'rb') as f:
             file_data = f.read()
             # file_type = imghdr.what(f.name)
             file_name =os.path.basename(f.name)
-        # add attachmnt to the message
+        # add attachment to the message
         msg.add_attachment(file_data, maintype='application', subtype='octet-stream', filename=file_name)    
 
     # SMTP send email
