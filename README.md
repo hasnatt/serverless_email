@@ -1,7 +1,7 @@
 
 # AWS serverless email in Python
 
-![setup](attatchments/REPO.png)
+![setup](attatchments/REPO2.png)
 
 A boiler template for sending scheduled emails in AWS Lambda.
 
