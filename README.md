@@ -6,7 +6,7 @@ A boiler template for sending scheduled emails in AWS Lambda.
 
 ## Deployment CLI
 
-> Set up virtual environment and install packages.
+Set up virtual environment and install packages.
 
     virtualenv env
 
@@ -16,11 +16,11 @@ A boiler template for sending scheduled emails in AWS Lambda.
     
     pip install jinja2
 
->   Deactivate environment.
+Deactivate environment.
 
     deactivate
 
->   Access site packages, zip the packages and move it to the working directory.
+Access site packages, zip the packages and move it to the working directory.
 
     cd env/lib/python3.8/site-packages
     
@@ -28,11 +28,13 @@ A boiler template for sending scheduled emails in AWS Lambda.
     
     mv my-deployment-package.zip ../../../../
 
-> Go back to the working directory and zip the application files.
+Go back to the working directory and zip the application files.
 
     cd ../../../../
     
     zip -g my-deployment-package.zip lambda_function.py template.html content.py config.py attatchments
+
+Upload files to AWS Lambda    
 
 > You can either deploy this via upload in AWS lambda or using the CLI command below. replace **Insert-lambda-name-here** with your lambda function name.
 
@@ -40,11 +42,12 @@ A boiler template for sending scheduled emails in AWS Lambda.
 
 ## Set up scheduled emails
 
->    Go to CloudWatch > Events > Rules
+Go to CloudWatch > Events > Rules
 
-> Create a Cron job to execute the lambda function. 
+Create a Cron job to execute the lambda function. 
 
 ![cron](attatchments/cron.png)
+> This is set for 8.30AM everyday. Use https://crontab.guru/ to generate your cron time. 
 
 
 ### Lambda setup
