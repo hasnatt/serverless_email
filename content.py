@@ -1,22 +1,29 @@
 from jinja2 import Environment, FileSystemLoader
 from datetime import date
 
-today = date.today()
-d = today.strftime("%d/%m/%Y")
+def get_html():
 
-# put data into dictinary
-name = 'hasnat'
-body = {
-    'name': name,
-    'date': d
-}
+    today = date.today()
+    d = today.strftime("%d/%m/%Y")
 
-# open file env and render emplate with dictionary
-env = Environment(loader=FileSystemLoader(''))
-template = env.get_template('template.html')
-HTML_CONTENT = template.render(body=body)
-print(HTML_CONTENT)
+    # put data into dictinary
+    name = 'hasnat'
+    body = {
+        'name': name,
+        'date': d
+    }
 
-# save the html
-# with open("email.html", "w") as fh:
-#     fh.write(output_from_parsed_template)
+    # open file env and render emplate with dictionary
+    env = Environment(loader=FileSystemLoader(''))
+    template = env.get_template('template.html')
+    HTML_CONTENT = template.render(body=body)
+    print(HTML_CONTENT)
+
+    # save the html
+    export_html(HTML_CONTENT)
+
+    return(HTML_CONTENT)    
+
+def export_html(html_string):
+    with open("email.html", "w") as fh:
+        fh.write(html_string)

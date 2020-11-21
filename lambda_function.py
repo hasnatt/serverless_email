@@ -11,7 +11,7 @@ from jinja2 import Template
 EMAIL_ADDRESS = config.EMAIL_ADDRESS
 EMAIL_PASSWORD = config.EMAIL_PASSWORD
 EMAIL_TO = config.EMAIL_TO
-HTML_CONTENT = content.HTML_CONTENT
+HTML_CONTENT = content.get_html()
 
 
 def lambda_handler(event, context):
@@ -28,7 +28,7 @@ def lambda_handler(event, context):
         file = os.path.join('attatchments/', filename)
         with open(file, 'rb') as f:
             file_data = f.read()
-            file_type = imghdr.what(f.name)
+            # file_type = imghdr.what(f.name)
             file_name =os.path.basename(f.name)
         # add attachmnt to the message
         msg.add_attachment(file_data, maintype='application', subtype='octet-stream', filename=file_name)    
