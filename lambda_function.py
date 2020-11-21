@@ -42,7 +42,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('email sent')}
 
-if __name__ == "__main__":
-    event ={}
-    context = []
-    print(lambda_handler(event, context))
+# if __name__ == "__main__":
+#     event ={}
+#     context = []
+#     print(lambda_handler(event, context))

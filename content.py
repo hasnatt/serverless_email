@@ -1,6 +1,10 @@
 from jinja2 import Environment, FileSystemLoader
 from datetime import date
 
+def export_html(html_string):
+    with open("email.html", "w") as fh:
+        fh.write(html_string)
+
 def get_html():
 
     today = date.today()
@@ -20,10 +24,6 @@ def get_html():
     print(HTML_CONTENT)
 
     # save the html
-    export_html(HTML_CONTENT)
+    # export_html(HTML_CONTENT)
 
     return(HTML_CONTENT)    
-
-def export_html(html_string):
-    with open("email.html", "w") as fh:
-        fh.write(html_string)
