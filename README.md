@@ -38,3 +38,14 @@ A boiler template for sending scheduled emails in AWS Lambda
 
     aws lambda update-function-code --function-name Insert-lambda-name-here --zip-file fileb://my-deployment-package.zip
 
+## Set up scheduled emails
+
+>    Go to CloudWatch > Events > Rules
+
+> Create a Cron job to execute the lambda function. 
+
+![cron](attatchments/crong.png)
+
+### Lambda setup
+
+![setup](attatchments/setup.png)
