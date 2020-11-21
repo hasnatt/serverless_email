@@ -3,7 +3,7 @@ A boiler template for sending scheduled emails in AWS Lambda
 
 
 
-deployment cli
+## deployment cli
 
 virtualenv env
 
