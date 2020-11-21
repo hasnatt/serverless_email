@@ -44,7 +44,7 @@ A boiler template for sending scheduled emails in AWS Lambda
 
 > Create a Cron job to execute the lambda function. 
 
-![cron](attatchments/crong.png)
+![cron](attatchments/cron.png)
 
 ### Lambda setup
 
