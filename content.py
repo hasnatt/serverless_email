@@ -1,9 +1,14 @@
 from jinja2 import Environment, FileSystemLoader
+from datetime import date
+
+today = date.today()
+d = today.strftime("%d/%m/%Y")
 
 # put data into dictinary
 name = 'hasnat'
 body = {
-    'name': name
+    'name': name,
+    'date': d
 }
 
 # open file env and render emplate with dictionary
