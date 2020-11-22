@@ -22,9 +22,9 @@ def lambda_handler(event, context):
     msg['To'] = EMAIL_TO
     msg.set_content(HTML_CONTENT, subtype = 'html')
 
-    # add attatchments
-    attatchment_files = os.listdir('attachments/')
-    for filename in attatchment_files:
+    # add attachments
+    attachment_files = os.listdir('attachments/')
+    for filename in attachment_files:
         file = os.path.join('attachments/', filename)
         with open(file, 'rb') as f:
             file_data = f.read()
