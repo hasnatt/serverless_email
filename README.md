@@ -34,7 +34,7 @@ Go back to the working directory and zip the application files.
 
     cd ../../../../
 
-    zip -g my-deployment-package.zip lambda_function.py template.html content.py config.py attatchments
+    zip -g my-deployment-package.zip lambda_function.py template.html content.py config.py attachments
 
 Upload files to AWS Lambda    
 
