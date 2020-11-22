@@ -48,10 +48,10 @@ Go to CloudWatch > Events > Rules
 
 Create a Cron job to execute the lambda function.
 
-![cron](attatchments/cron.png)
+![cron](attachments/cron.png)
 > This is set for 8.30AM everyday. Use https://crontab.guru/ to generate your cron time.
 
 
 ### Lambda setup
 
-![setup](attatchments/setup.png)
+![setup](attachments/setup.png)
