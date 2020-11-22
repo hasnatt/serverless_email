@@ -1,7 +1,7 @@
 
 # AWS serverless email in Python
 
-![setup](attatchments/REPO2.png)
+![setup](attachments/REPO2.png)
 
 A boiler template for sending scheduled emails in AWS Lambda.
 
@@ -15,7 +15,7 @@ Set up virtual environment and install packages.
     source env/bin/activate
 
     pip install requests
-    
+
     pip install jinja2
 
 Deactivate environment.
@@ -25,15 +25,15 @@ Deactivate environment.
 Access site packages, zip the packages and move it to the working directory.
 
     cd env/lib/python3.8/site-packages
-    
+
     zip -r my-deployment-package.zip .
-    
+
     mv my-deployment-package.zip ../../../../
 
 Go back to the working directory and zip the application files.
 
     cd ../../../../
-    
+
     zip -g my-deployment-package.zip lambda_function.py template.html content.py config.py attatchments
 
 Upload files to AWS Lambda    
@@ -46,10 +46,10 @@ Upload files to AWS Lambda
 
 Go to CloudWatch > Events > Rules
 
-Create a Cron job to execute the lambda function. 
+Create a Cron job to execute the lambda function.
 
 ![cron](attatchments/cron.png)
-> This is set for 8.30AM everyday. Use https://crontab.guru/ to generate your cron time. 
+> This is set for 8.30AM everyday. Use https://crontab.guru/ to generate your cron time.
 
 
 ### Lambda setup
