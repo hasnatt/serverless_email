@@ -1,7 +1,7 @@
 
 # AWS serverless email in Python
 
-![setup](attachments/REPO2.png)
+![setup](attachments/REPO2.jpg)
 
 A boiler template for sending scheduled emails in AWS Lambda.
 
@@ -41,6 +41,7 @@ Upload files to AWS Lambda
 > You can either deploy this via upload in AWS lambda or using the CLI command below. replace **Insert-lambda-name-here** with your lambda function name.
 
     aws lambda update-function-code --function-name Insert-lambda-name-here --zip-file fileb://my-deployment-package.zip
+> aws lambda update-function-code --function-name send_email --zip-file fileb://my-deployment-package.zip    
 
 ## Set up scheduled emails
 
