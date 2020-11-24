@@ -17,7 +17,7 @@ HTML_CONTENT = content.get_html()
 def lambda_handler(event, context):
     # construct email
     msg = EmailMessage()
-    msg['Subject'] = 'Images'
+    msg['Subject'] = 'Daily Email'
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = EMAIL_TO
     msg.set_content(HTML_CONTENT, subtype = 'html')
